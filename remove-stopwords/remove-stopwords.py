@@ -4,6 +4,7 @@ def remove_stopwords(tokens, stopwords):
     """
     # Your code here
     vector = []
+    stopwords = set(stopwords)
     flag = 0
     for token in tokens:
         if token not in stopwords:
