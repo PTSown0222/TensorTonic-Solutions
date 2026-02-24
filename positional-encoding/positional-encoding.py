@@ -18,6 +18,3 @@ def positional_encoding(seq_len, d_model, base=10000.0):
     pe[:,1::2] = np.cos(pos_indices / div_term)[:, :odd_cols]
 
     return pe
-
-    # $e^{- \frac{2i}{d_{model}} \ln(10000)}$ --> transpose formulate
-    # 
