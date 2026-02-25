@@ -11,9 +11,14 @@ def entropy_node(y):
     classes, counts = np.unique(y, return_counts = True)
     H = 0.0
     # loop solution
-    total_elements = len(y)
-    for count in counts:
-        p_i = count / total_elements
-        H -= p_i * np.log2(p_i + eps)
+    # total_elements = len(y)
+    # for count in counts:
+    #     p_i = count / total_elements
+    #     H -= p_i * np.log2(p_i + eps)
+    # return np.abs(H)
+
+    # pythonic solution
+    p_i = counts / len(y)
+    H -= np.sum(p_i * np.log2(p_i + eps))
     return np.abs(H)
         
